@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         list.add(new ListData("The prince of wales ran up the wall to meet the fine young prince!"));
         list.add(new ListData("The famous soccer star ran up the wall to meet the fine young prince!"));
         list.add(new ListData("The amazing spiderman ran up the wall to meet the fine young prince!"));
+        list.add(new ListData("The amazing spiderman ran up the wall to meet the fine young prince!"));
         listAdapter = new ListAdapter(list);
         rvList.setAdapter(listAdapter);
     }
