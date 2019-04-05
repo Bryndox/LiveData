@@ -19,12 +19,4 @@ public class ListDataViewHolder extends RecyclerView.ViewHolder {
         tvCount = itemView.findViewById(R.id.tvCount);
         tvContent = itemView.findViewById(R.id.tvContent);
     }
-
-    public TextView getTvCount() {
-        return tvCount;
-    }
-
-    public TextView getTvContent() {
-        return tvContent;
-    }
 }

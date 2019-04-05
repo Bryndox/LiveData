@@ -4,10 +4,7 @@ import android.os.Bundle;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.util.List;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,17 +18,17 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initPresenter();
     }
 
-
+    //Initializes the presenter
     @Override
     public void initPresenter() {
         presenter = new MainActivityPresenter(this);
         presenter.onViewInit();
     }
 
+    //Initialize views
     @Override
     public void bindViews() {
         editText = findViewById(R.id.etListInput);
@@ -41,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         rvList.setAdapter(listAdapter);
     }
 
+    //Observe the list and update the UI
     @Override
     public void observeList() {
         presenter.getDataList().observe(this, dataList -> listAdapter.setData(dataList));
