@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -15,8 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ListAdapter extends RecyclerView.Adapter<ListDataViewHolder> {
     List<ListData> dataList;
 
-    public ListAdapter(List<ListData> dataList) {
-        this.dataList = dataList;
+    public ListAdapter() {
+        this.dataList = new ArrayList<>();
     }
 
     @NonNull
@@ -37,5 +38,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListDataViewHolder> {
     @Override
     public int getItemCount() {
         return dataList == null ? 0 : dataList.size();
+    }
+
+    public void setData(List<ListData> dataList) {
+        this.dataList = dataList;
+        notifyDataSetChanged();
     }
 }

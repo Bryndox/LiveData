@@ -1,5 +1,9 @@
 package com.ubunifuconcepts.livedata;
 
+import java.util.List;
+
+import androidx.lifecycle.MutableLiveData;
+
 /**
  * Created by Brian on 03/04/2019
  */
@@ -9,12 +13,12 @@ public interface MainActivityContract {
 
         void bindViews();
 
-        void registerEventListeners();
-
-        void initListAdapter();
+        void observeList();
     }
 
     interface Presenter {
         void onViewInit();
+
+        MutableLiveData<List<ListData>> getDataList();
     }
 }
